@@ -1,10 +1,14 @@
 
+import { useState } from 'react';
 import './App.css';
 import weblogo from "./images/logo.png"
 function App() {
   
+  let [count, setCount] = useState(22);
+
   let display = () => {
-    alert("welcome to React.js");
+    setCount(count+1)
+    console.log(count);
   }
   
   let addData = (num1, num2) => {
@@ -13,6 +17,8 @@ function App() {
   return (
     <div className="App">
       <img width={150} src={weblogo} alt="" />
+
+    {count}
       {/* For non-parameerized data we will not use the "()" brackets to call the function */}
       <button className="bg-green-600 rounded-md p-2 w-[60px] h-12 text-white font-bold mb-5" onClick={display}>Click</button> <br />
 
